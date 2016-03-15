@@ -1,0 +1,47 @@
+    <h1>SVG中国地图导航  仿百度旅游版</h1>
+    <h2>兼容性 支持 IE7+，谷歌，火狐(因百度使用flash技术制作，所以特效上很难达到百度那种效果)</h2>
+
+
+<div style="margin: 0 auto;width: 550px; float: left;">
+<h5 style="font-size: 20px;">各省展示内容模版(以吉林省为例)</h5>
+<textarea disabled="disabled" style="width:550px;height: 320px;max-height: 320px; max-width: 550px;">
+<!--    <div class="mapTipText mapTipText1">
+        <div class="mapTipImg"><img src="images/jilin.jpg" alt=""/></div>
+        <div class="mapTipList">
+            <h2><a href="">吉林<span>Jilin</span></a></h2>
+            <ul>
+                <li><a href="">长白山</a></li>
+                <li><a href="">长春</a></li>
+                <li><a href="">延吉</a></li>
+                <li><a href="">雾凇岛</a></li>
+                <li><a href="">集安</a></li>
+                <li><a href="">吉林市</a></li>
+                <li><a href="">查干湖</a></li>
+                <li><a href="">三角龙湾</a></li>
+                <li><a href="">通化</a></li>
+                <li><a href="">四平</a></li>
+                <li><a href="">松原</a></li>
+                <li><a href="">白城</a></li>
+            </ul>
+        </div>
+    </div>-->
+</textarea>
+<p>模版中的div.mapTipText的第二个classmapTipText1中的数字要对应目录js/res/chinaMapConfig.js中数据chinaMapConfig['names']['id'],才能正确显示对应省内容</p>
+    <h5>js函数目前提供参数列表</h5>
+<textarea disabled="disabled" style="width:550px;height:290px;max-height: 290px; max-width: 550px;">
+$('#ChinaMap').SVGMap({
+    mapWidth: 806,       //地图宽度
+    mapHeight: 396，     //地图高度
+    strokeWidth: 1,      //各省边界线宽度
+    strokeColor: 'F9FCFE',  //各省边界线颜色 默认 ：F9FCFE
+    strokeHoverColor: 'd9d9d9', //各省hover边界线颜色 默认 ：d9d9d9
+    stateInitColor: '',  //统一各省展示颜色 默认 ：不统一按chinaMapConfig.js里面设置的颜色展示
+    stateHoverColor: 'ffffff',  //各省hover展示颜色  默认 :  ffffff
+    stateDisabledColor: 'eeeeee',  //各省禁用展示颜色  默认 :  eeeeee
+    showTip: true,      //是否显示提示  默认显示
+    tipWidth: 280,      //展示内容（白色区域）宽度（单位：px）
+    tipHeight: 110,     //展示内容（白色区域）高度（单位：px）
+    tipOuterH : 30,     //展示内容在上下的连接（透明灰色区域）高度（单位：px）  这个展示的方向也可以单独配置在chinaMapConfig.js的chinaMapConfig['names']['direction']中设置
+    tipOuterW : 30,     //展示内容在左右的连接（透明灰色区域）宽度（单位：px）
+});
+</textarea>

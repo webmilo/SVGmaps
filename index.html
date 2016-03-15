@@ -1,0 +1,387 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SVG中国地图导航</title>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/raphael-min.js"></script>
+    <script src="js/chinaMapConfig.js"></script>
+    <script src="js/map-min.js"></script>
+    <style>
+        *{margin:0;padding:0;border: none;}
+        body { color: #333; text-align: center; font-size: 12px;background-color: #fff; font-family: "微软雅黑","宋体",Arial;}
+        .mapTipText{width: 260px;height: 90px;background-color:#333;background-color: rgba(0,0,0,.7);border-radius: 5px;border: 1px solid #666;padding: 10px;}
+
+        /*.mapTipText .mapTipImg{height: 66px; width: 66px; float: left;border: 2px solid #ffffff; border-radius: 50%;overflow: hidden;margin: -12px 5px 0 -12px;}*/
+        /*.mapTipText .mapTipImg img{width: 100%;height: 100%;}*/
+        .mapTipText .mapTipList{float: left;margin-left: 4px;}
+        .mapTipText .mapTipList h2{text-align: left;font-size: 15px; color: #eee;}
+        /*.mapTipText .mapTipList h2 a{font-size: 24px; color: #fff;text-decoration:none;}
+        .mapTipText .mapTipList h2 a:hover{ color: #0085d2;}
+        .mapTipText .mapTipList h2 a span{font-size: 16px;margin-left: 3px;}*/
+        .mapTipText .mapTipList ul{ width: 260px;}
+        .mapTipText .mapTipList ul li{list-style: none;padding: 5px 3px 0 3px;display: inline-block;}
+        .mapTipText .mapTipList ul li a{color: #eee;text-decoration:none;}
+        .mapTipText .mapTipList ul li a:hover{color:#ffffff;}
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            $('#ChinaMap').SVGMap({
+                mapWidth: 800,
+                mapHeight: 660,
+                stateHoverColor: 'eee',
+                tipOuterH : 20,
+                tipOuterW : 20
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="wrap">
+    <div class="itemCon" style="float: left">
+        <div id="ChinaMap"></div>
+        <div id="stateTip" style="position: absolute;left: 100%;text-align: left;display: inline;"></div>
+    </div>
+    
+    <div id="mapTipContent" style="width: 900px;margin: 0 auto;display: none">
+        <div class="mapTipText mapTipText0">
+            <div class="mapTipList">
+                <h2>黑龙江</h2>
+                <ul>
+                    <li><a href="http://221.212.153.203/fpcx/zzsfpcx.jsp" target="_blank">黑龙江国税增值税票</a></li>
+                    <li><a href="http://221.212.153.203/fpcx/skskjfpcx.jsp" target="_blank">黑龙江国税税控票</a></li>
+                    <li><a href="http://221.212.153.203/fpcx/qtptfpcx.jsp" target="_blank">黑龙江非税控票</a></li>
+                    <li><a href="http://221.212.153.203/fpcx/swjgdkfpcx.jsp" target="_blank">黑龙江国税机关代开票</a></li>
+                    <li><a href="http://www.hljtax.gov.cn/wwqtnew/lby/fpcx.jsp" target="_blank">黑龙江地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText1">
+            <div class="mapTipList">
+                <h2>吉林</h2>
+                <ul>
+                    <li><a href="http://www.jl-n-tax.gov.cn/col/col2762/index.html" target="_blank">吉林国税</a></li>
+                    <li><a href="http://www.jlds.gov.cn/about.php?cid=1991" target="_blank">吉林地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText2">
+            <div class="mapTipList">
+                <h2>辽宁</h2>
+                <ul>
+                    <li><a href="http://wsbst.tax.ln.cn/zwcx.do?method=turn" target="_blank">辽宁国税</a></li>
+                    <li><a href="http://fpcx.lnsds.gov.cn/jsp/fpzwcx/FPZWCX.jsp" target="_blank">辽宁地税</a></li>
+                    <li><a href="http://220.178.250.21/fpcy/getfp.htm" target="_blank">马鞍山地税</a></li>
+                    <li><a href="http://59.46.214.46:7002/fpcx/include2/wlfpcybd_lscx_wpcx.jsp" target="_blank">大连国税网票</a></li>
+                    <li><a href="http://59.46.214.46:7002/fpcx/include2/wlfpcybd_lscx_lxcx.jsp" target="_blank">大连国税非网票</a></li>
+                    <li><a href="http://59.46.214.46:7002/fpcx/include2/wlfpcybd_lscx_dkfpcx.jsp" target="_blank">大连国税其他票</a></li>
+                    <li><a href="http://bsptwj.dl-l-tax.gov.cn:8004/dl-taxBsptWeb/WA1110Action.do?method=doInit" target="_blank">大连地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText3">
+            <div class="mapTipList">
+                <h2>河北</h2>
+                <ul>
+                    <li><a href="http://wsbst.tax.ln.cn/zwcx.do?method=turn" target="_blank">辽宁国税</a></li>
+                    <li><a href="http://fpcx.lnsds.gov.cn/jsp/fpzwcx/FPZWCX.jsp" target="_blank">辽宁地税</a></li>
+                    <li><a href="http://220.178.250.21/fpcy/getfp.htm" target="_blank">马鞍山地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText4">
+            <div class="mapTipList">
+                <h2>山东</h2>
+                <ul>
+                    <li><a href="http://www.qd-n-tax.gov.cn/sst/index.do" target="_blank">青岛国税</a></li>
+                    <li><a href="http://etax.qdds.gov.cn/fpzw/" target="_blank">青岛地税</a></li>
+                    <li><a href="http://www.sd-n-tax.gov.cn/col/col47487/index.html" target="_blank">山东国税</a></li>
+                    <li><a href="http://www.sdds.gov.cn/col/col22100/index.html" target="_blank">山东地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText5">
+            <div class="mapTipList">
+                <h2>江苏</h2>
+                <ul>
+                    <li><a href="http://www.jsgs.gov.cn/ygzt/sjfpcx.html" target="_blank">江苏国税</a></li>
+                    <li><a href="http://www.jsds.gov.cn/" target="_blank">江苏地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText6">
+            <div class="mapTipList">
+                <h2>浙江</h2>
+                <ul>
+                    <li><a href="http://www.nbtax.gov.cn/bsfw/sscx/fpxxcx/" target="_blank">宁波国税</a></li>
+                    <li><a href="http://taxapp.nbcs.gov.cn/aWeb/invoiceJsp/invoiceSearch.jsp" target="_blank">宁波地税</a></li>
+                    <li><a href="http://www.zjtax.gov.cn/fpcx/include2/wlfpcybd_lscx.jsp" target="_blank">浙江国税</a></li>
+                    <li><a href="http://etax.zjds.gov.cn/sword?tid=WsxtXtzyfpcx100BLH_init" target="_blank">浙江地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText7">
+            <div class="mapTipList">
+                <h2>安徽</h2>
+                <ul>
+                    <li><a href="http://60.173.215.73:9015/wlfpcx/cxjb.do?method=showCxJb" target="_blank">安徽国税</a></li>
+                    <li><a href="http://61.191.30.107/sl12366v6_fpcx/" target="_blank">安徽地税</a></li>
+                    <li><a href="http://218.22.128.165:8088/nsfw3w/" target="_blank">安庆地税</a></li>
+                    <li><a href="http://wlkp.965432.com:8020/wlkp/query/index_hf.jsp" target="_blank">合肥国税</a></li>
+                    <li><a href="http://220.178.51.130/sl12366v6_fpcx/" target="_blank">合肥地税</a></li>
+                    <li><a href="http://218.23.149.100:8088/nsfw3w/" target="_blank">黄山地税</a></li>
+                    <li><a href="http://112.26.80.145:8080/nsfw3w/" target="_blank">六安地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText8">
+            <div class="mapTipList">
+                <h2>河南</h2>
+                <ul>
+                    <li><a href="http://www.12366.ha.cn/003/bsfw_302/sscx_30202/index.html?NVG=2&LM_ID=30202&SSCX_YWMC=fpzwcx" target="_blank">河南国税</a></li>
+                    <li><a href="http://wsdt.ha-l-tax.gov.cn/sword?ctrl=WwSscxFpzwcxCtrl_init" target="_blank">河南地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText9">
+            <div class="mapTipList">
+                <h2>山西</h2>
+                <ul>
+                    <li><a href="http://202.99.207.241:7005/fpcx/" target="_blank">山西国税</a></li>
+                    <li><a href="http://218.26.133.58:85/Sehup/invseek/web.jsp" target="_blank">山西地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText10">
+            <div class="mapTipList">
+                <h2>陕西</h2>
+                <ul>
+                    <li><a href="http://219.144.206.60:8000/etax/index/fpcx/jsp/grsdsjsq.htm#" target="_blank">陕西国税</a></li>
+                    <li><a href="http://fpcx.xads.gov.cn/sxlt/inv/invqueryinit.do" target="_blank">陕西地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText11">
+            <div class="mapTipList">
+                <h2>甘肃</h2>
+                <ul>
+                    <li><a href="http://www.gs12366.gov.cn/fpcx" target="_blank">甘肃国税</a></li>
+                    <li><a href="http://61.178.32.16:8000/fpcx/jsp/fpjb/fpxxcx_index.jsp" target="_blank">甘肃地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText12">
+            <div class="mapTipList">
+                <h2>湖北</h2>
+                <ul>
+                    <li><a href="http://fpcx.hebds.gov.cn/fpxx/fpxxcx.jsp" target="_blank">湖北国税</a></li>
+                    <li><a href="http://221.232.128.57:8000/webroot/wlfp/FpcxAction.do?method=display" target="_blank">湖北地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText13">
+            <div class="mapTipList">
+                <h2>江西</h2>
+                <ul>
+                    <li><a href="http://117.40.128.134:7001/fpcy/" target="_blank">江西国税</a></li>
+                    <li><a href="http://www.jxds.gov.cn/portalV3/site/site/portal/jx/sscx_cate.portal%5BcategoryId=3969%5D%5BrealcategoryId=3969%5D%5BsiteName=jx%5D%5BcategoryCode=001027001002002%5D" target="_blank">江西地税</a></li>
+                    <li><a href="http://www.jxds.gov.cn/portalV3/site/site/portal/jx/sscx_cate.portal%5BcategoryId=3974%5D%5BsiteName=jx%5D%5BcategoryCode=001027001002007%5D" target="_blank">江西地税手机充值发票</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText14">
+            <div class="mapTipList">
+                <h2>福建</h2>
+                <ul>
+                    <li><a href="http://www.fj-n-tax.gov.cn/wssw/jsp/common/query/fpcy.jsp" target="_blank">福建国税</a></li>
+                    <li><a href="http://www.fj-n-tax.gov.cn/fpcy/" target="_blank">福建国税电票</a></li>
+                    <li><a href="http://218.66.6.161/etax2006/fbzwcxMgrAction.flv" target="_blank">福建地税</a></li>
+                    <li><a href="http://www.xm-n-tax.gov.cn/shshxxchx/fpzhwjlxchx/" target="_blank">厦门国税税控票</a></li>
+                    <li><a href="http://www.xm-n-tax.gov.cn/shshxxchx/fpzhwjlxchx/index.htm" target="_blank">厦门国税网票</a></li>
+                    <li><a href="http://www.xm-n-tax.gov.cn/shshxxchx/fpzhwjlxchx/index.htm" target="_blank">厦门国税定额票</a></li>
+                    <li><a href="https://www.xm-l-tax.gov.cn/dwfw/fpyz/fp_yz.do" target="_blank">厦门地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText15">
+            <div class="mapTipList">
+                <h2>湖南</h2>
+                <ul>
+                    <li><a href="http://113.240.252.74:99/zwjb/skfpcx.jsp" target="_blank">湖南国税税控票</a></li>
+                    <li><a href="http://113.240.252.74:99/zwjb/zzsptfpcx.jsp" target="_blank">湖南国税增值税票</a></li>
+                    <li><a href="http://113.240.252.74:99/zwjb/tydkfpcx.jsp" target="_blank">湖南国税代开票</a></li>
+                    <li><a href="http://113.240.252.74:99/zwjb/qtptfpcx.jsp" target="_blank">湖南国税其他票</a></li>
+                    <li><a href="http://www.hnds.gov.cn/hnmh/bsfw/zxcx/fpzwcx/default.htm" target="_blank">湖南地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText16">
+            <div class="mapTipList">
+                <h2>贵州</h2>
+                <ul>
+                    <li><a href="http://etax.gzgs12366.gov.cn:8080/" target="_blank">贵州国税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText17">
+            <div class="mapTipList">
+                <h2>四川</h2>
+                <ul>
+                    <li><a href="http://wsbs.sc-n-tax.gov.cn/fpcy/index.htm" target="_blank">四川国税</a></li>
+                    <li><a href="http://182.151.197.163:7002/FPCY_SCDS_WW/" target="_blank">四川地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText18">
+            <div class="mapTipList">
+                <h2>云南</h2>
+                <ul>
+                    <li><a href="http://www.yngs.gov.cn/newWeb/template/index.jsp" target="_blank">云南国税</a></li>
+                    <li><a href="http://61.166.240.82/wssw/jsp/gzyw/fpcx/fpcx_init.jsp?fplx=05" target="_blank">云南地税代开票</a></li>
+                    <li><a href="http://116.249.124.243/nfjk/jsp/gzyw/wlfpcx/wlfpcx_init.jsp" target="_blank">云南地税网票</a></li>
+                    <li><a href="http://61.166.240.82/wssw/jsp/gzyw/fpcx/fpcx_init.jsp?fplx=02" target="_blank">云南地税其他票</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText19">
+            <div class="mapTipList">
+                <h2>青海</h2>
+                <ul>
+                    <li><a href="http://www.csdn315.com.cn/" target="_blank">青海地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText20">
+            <div class="mapTipList">
+                <h2>海南</h2>
+                <ul>
+                    <li><a href="http://221.176.87.246:9090/fpcy/" target="_blank">海南国税</a></li>
+                    <li><a href="http://202.100.197.38:7009/etax2006/bsfwt/nsrxxcx/fpzwcx.jsp" target="_blank">海南地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText21">
+            <div class="mapTipList">
+                <h2>上海</h2>
+                <ul>
+                    <li><a href="http://www.tax.sh.gov.cn/wsbs/WSBSptFpCx_loginsNewl.jsp" target="_blank">上海国税普票</a></li>
+                    <li><a href="http://dzfp.tax.sh.gov.cn/" target="_blank">上海国税电票</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText22">
+            <div class="mapTipList">
+                <h2>重庆</h2>
+                <ul>
+                    <li><a href="http://218.70.65.72:7002/cqfpcy/index.jsp" target="_blank">重庆国税增值票</a></li>
+                    <li><a href="http://218.70.65.72:3002/fpcx/indexOne.jsp" target="_blank">重庆国税网票</a></li>
+                    <li><a href="http://www.cq-l-tax.gov.cn/fpcx/" target="_blank">重庆地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText23">
+            <div class="mapTipList">
+                <h2>天津</h2>
+                <ul>
+                    <li><a href="http://fpxxbd.tjsat.gov.cn/fpxxbd/" target="_blank">天津国税</a></li>
+                    <li><a href="http://fpcx.tjcs.gov.cn/index_Query.jsp" target="_blank">天津地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText24">
+            <div class="mapTipList">
+                <h2>北京</h2>
+                <ul>
+                    <li><a href="http://www.bjtax.gov.cn/ptfp/fpindex.jsp" target="_blank">北京国税</a></li>
+                    <li><a href="http://zwcx.tax861.gov.cn/fpcx.jsp" target="_blank">北京地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText25">
+            <div class="mapTipList">
+                <h2>宁夏</h2>
+                <ul>
+                    <li><a href="http://www.nxgs.gov.cn/bsfwsj_fpyz.jsp?urltype=tree.TreeTempUrl&wbtreeid=1224" target="_blank">宁夏国税</a></li>
+                    <li><a href="http://dzswj.nxds.gov.cn/nxdzswj/fpcy/fpcy.jsp" target="_blank">宁夏地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText26">
+            <div class="mapTipList">
+                <h2>内蒙古</h2>
+                <ul>
+                    <li><a href="http://www.nm-n-tax.gov.cn:8000/fpcx/nmgsfpcx/wlfpcybd_lscx.jsp" target="_blank">内蒙古国税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText27">
+            <div class="mapTipList">
+                <h2>广西</h2>
+                <ul>
+                    <li><a href="http://fpzw.gxds.gov.cn:7366/fpzwcx/query.jsp" target="_blank">广西国税</a></li>
+                    <li><a href="http://fpzw.gxds.gov.cn:7366/fpzwcx/query.jsp" target="_blank">广西地税其他票</a></li>
+                    <li><a href="http://fpzw.gxds.gov.cn:7366/fpzwcx/query.jsphttp://fpzw.gxds.gov.cn:7366/fpzwcx/query.jsp" target="_blank">广西地税网票</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText28">
+            <div class="mapTipList">
+                <h2>新疆</h2>
+                <ul>
+                    <li><a href="http://www.xj-n-tax.gov.cn/zxbs/sscx/fpzwch/" target="_blank">新疆国税</a></li>
+                    <li><a href="http://wlfp.xjdsj.gov.cn/FpzwcxAction.do?handleCode=init" target="_blank">新疆地税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText29">
+            <div class="mapTipList">
+                <h2>西藏</h2>
+                <ul>
+                    <li><a href="http://www.xztax.gov.cn:8881/" target="_blank">西藏国税</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mapTipText mapTipText30">
+            <div class="mapTipList">
+                <h2>广东</h2>
+                <ul>
+                    <li><a href="http://portal.gd-n-tax.gov.cn/pub/gdgsww/bsfw/sscx/wlfpcy/" target="_blank">广东国税网票</a></li>
+                    <li><a href="http://www.gd-n-tax.gov.cn/pub/gdgsww/bsfw/sscx/fpcy/" target="_blank">广东国税其他票</a></li>
+                    <li><a href="http://www.gdltax.gov.cn/portal/gdsite/4VE9FVJCAWSJ32TJB88V19WV49I96XD6.htm" target="_blank">广东地税电票</a></li>
+                    <li><a href="http://www.gdltax.gov.cn/portal/gdsite/4VE9FVJCAWSJ32TJB88V19WV49I96XD6.htmhttp://www.gdltax.gov.cn/portal/gdsite/4VE9FVJCAWSJ32TJB88V19WV49I96XD6.htm" target="_blank">广东地税其他票</a></li>
+                    <li><a href="http://www.gd-n-tax.gov.cn/pub/001028/bsfw/sscx/fpcy/" target="_blank">佛山国税</a></li>
+                    <li><a href="http://www.gd-n-tax.gov.cn/pub/001028/bsfw/sscx/wlfpcy/" target="_blank">佛山国税网票</a></li>
+                    <li><a href="http://fs.gdltax.gov.cn/portal/fzgb/fs/11DO8TEYL90LB428QHW6OMEFX6JSOB4H.htm" target="_blank">佛山地税电票</a></li>
+                    <li><a href="http://fs.gdltax.gov.cn/portal/fzgb/fs/PX7S6T46VAFFWCUKU8NIVK7WACD7G9RN.htm" target="_blank">佛山地税其他票</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div class="mapTipText mapTipText31">
+            <div class="mapTipList">
+                <h2>香港</h2>
+                <ul>
+                    <li><a href="" target="_blank"></a></li>
+                </ul>
+            </div>
+        </div> -->
+        <!-- <div class="mapTipText mapTipText32">
+            <div class="mapTipList">
+                <h2>台湾</h2>
+                <ul>
+                    <li><a href="" target="_blank"></a></li>
+                </ul>
+            </div>
+        </div> -->
+        <!-- <div class="mapTipText mapTipText33">
+            <div class="mapTipList">
+                <h2>澳门</h2>
+                <ul>
+                    <li><a href="" target="_blank"></a></li>
+                </ul>
+            </div>
+        </div> -->
+    </div>
+</div>
+</body>
+</html>
